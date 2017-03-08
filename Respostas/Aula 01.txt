@@ -1,0 +1,19 @@
+o que são sistemas embarcados ?
+	Sistemas invisiveis. Que possuem algum microcontrolador que tem algum sistema excluivo de operação.
+
+O que são sistema microntroladores ? 
+	São sistemas que possuem um conjunto de memoria e controle em um unico espaço.
+  
+  P:Apresente aplicações de sistemas embarcado: 
+    Para a indústria automotiva;
+      Sistema de arbag, injeção eletrônica, ar condicionado.
+    Para eletrodomésticos:
+      geladeira, máquina de lavar;
+    Para automação industrial: 
+      Controle de esteira, controle de temperatura de lugares especificos.
+      
+P:Cite arquiteturas possiveis e as difernças entre elas
+  x64,x86. A diferença entre é que o de x64 é em 32 bits e outro em 64 bits.
+  
+P:por quê usamos o MSP430 na disciplina, ao invés de outro microcontrolador ? 
+  Utilizaçao de C e assembly, baixo custo de aquisição e facilidade do mesmo.

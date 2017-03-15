@@ -1,23 +1,23 @@
-Q1. Quais as diferenÁas entre os barramentos de dados e de endereÁos?
+Q1. Quais as diferen√ßas entre os barramentos de dados e de endere√ßos?
  
- EndereÁos :  local da memoria onde È alocado a informaÁ„o.
- Barramentos de dados : … o caminho entre as duas unidades onde acontece a transmiÁ„o de dados. Portanto, um barramento de 8 linhas para transmitir dados 
+ Endere√ßos :  local da memoria onde √© alocado a informa√ß√£o.
+ Barramentos de dados : √â o caminho entre as duas unidades onde acontece a transmi√ß√£o de dados. Portanto, um barramento de 8 linhas para transmitir dados 
 de 8 bits em paralelo.
- Barramento de endereÁo: 
+ Barramento de endere√ßo: 
 
-Q2. Quais s„o as diferenÁas entre as memÛrias RAM e ROM?
+Q2. Quais s√£o as diferen√ßas entre as mem√≥rias RAM e ROM?
  
- RAM: … a memoria volatil do sistema, feita para armazenamento de dados rapidos e que ser„o apagados assim que se desliga o sistema.
- ROM: … a memoria n„o volatil do sistema. Feita para armazenamento dos dados que deseja continuar a longo que o sistema fica desligado.	
+ RAM: √â a memoria volatil do sistema, feita para armazenamento de dados rapidos e que ser√£o apagados assim que se desliga o sistema.
+ ROM: √â a memoria n√£o volatil do sistema. Feita para armazenamento dos dados que deseja continuar a longo que o sistema fica desligado.	
 
 
-Q3. Considere o cÛdigo abaixo, de 12 linhas:
+Q3. Considere o c√≥digo abaixo, de 12 linhas:
 
     1.   #include <stdio.h>
     2.   int main(void)
     3.   {
     4.      int i;
-    5.      printf("Insira um n˙mero inteiro: ");
+    5.      printf("Insira um n√∫mero inteiro: ");
     6.      scanf("%d", &i);
     7.      if(i%2)
     8.         printf("%d eh impar.\n");
@@ -26,37 +26,37 @@ Q3. Considere o cÛdigo abaixo, de 12 linhas:
    11.      return 0;
    12.   }
 
-Para este cÛdigo, responda:
-	(a) A vari·vel 'i' È armazenada na memÛria RAM ou ROM? Por quÍ?
+Para este c√≥digo, responda:
+	(a) A vari√°vel 'i' √© armazenada na mem√≥ria RAM ou ROM? Por qu√™?
              
-             … armazenda na RAm, pois esse sistema opera sÛ quando est· sendo compliado.
+             √â armazenda na RAm, pois esse sistema opera s√≥ quando est√° sendo compliado.
 		
-	(b) O programa compilado a partir deste cÛdigo È armazenado na memÛria RAM ou ROM? Por quÍ?
+	(b) O programa compilado a partir deste c√≥digo √© armazenado na mem√≥ria RAM ou ROM? Por qu√™?
 
-             … armazenado na ROM, pois poder· recompliar o codigo quando quiser. 
+             √â armazenado na ROM, pois poder√° recompliar o codigo quando quiser. 
 
-Q4. Quais s„o as diferenÁas, vantagens e desvantagens das arquiteturas Harvard e Von Neumann?
+Q4. Quais s√£o as diferen√ßas, vantagens e desvantagens das arquiteturas Harvard e Von Neumann?
 	
-	Harvard:  ROM fica separada da RAM, sendo assim criando um tempo maior para interpretaÁ„o de algum dado que precisa vim da ROM passa pelo CPU, CPU para RAM e RAM para CPU. 
-	Von Neumann:  ROM e RAM ficam juntas, assim o tempo de interpretaÁ„o È mais rapida. N„o tem o Caminho ROM/ CPU, igual na Harvard;
+	Harvard:  ROM fica separada da RAM, sendo assim criando um tempo maior para interpreta√ß√£o de algum dado que precisa vim da ROM passa pelo CPU, CPU para RAM e RAM para CPU. 
+	Von Neumann:  ROM e RAM ficam juntas, assim o tempo de interpreta√ß√£o √© mais rapida. N√£o tem o Caminho ROM/ CPU, igual na Harvard;
 
-Q5. Considere a vari·vel inteira 'i', armazenando o valor 0x8051ABCD. Se 'i' È armazenada na memÛria a partir do endereÁo 0x0200, como ficam este byte e os seguintes, considerando que a memÛria È:
+Q5. Considere a vari√°vel inteira 'i', armazenando o valor 0x8051ABCD. Se 'i' √© armazenada na mem√≥ria a partir do endere√ßo 0x0200, como ficam este byte e os seguintes, considerando que a mem√≥ria √©:
 	(a) Little-endian?
-		Guarda os valores em funÁ„o decrescente. Portanto, 
-			0X02002 -> 0XCD
-			0X02004 -> 0XAB
-			0X02006 -> 0X80
-			0X02008	-> 0X51 
+		Guarda os valores em fun√ß√£o decrescente. Portanto, 
+			0X0200 -> 0XCD
+			0X0202 -> 0XAB
+			0X0204 -> 0X80
+			0X0206	-> 0X51 
 			
 	(b) Big-endian?
-		Guarda os valores em funÁ„o crescente. Portanto,
-			0X02002 -> 0X51
-			0X02004 -> 0X80
-			0X02006 -> 0XAB
-			0X02008	-> 0XCD
+		Guarda os valores em fun√ß√£o crescente. Portanto,
+			0X0200 -> 0X51
+			0X0202 -> 0X80
+			0X0204 -> 0XAB
+			0X0206	-> 0XCD
 	
 
 
-Q6. Sabendo que o processador do MSP430 tem registradores de 16 bits, como ele soma duas vari·veis de 32 bits?
+Q6. Sabendo que o processador do MSP430 tem registradores de 16 bits, como ele soma duas vari√°veis de 32 bits?
 	
 	Ele faz a soma por partes. A Flag C vai para um.

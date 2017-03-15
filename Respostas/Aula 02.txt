@@ -1,0 +1,62 @@
+Q1. Quais as diferenças entre os barramentos de dados e de endereços?
+ 
+ Endereços :  local da memoria onde é alocado a informação.
+ Barramentos de dados : É o caminho entre as duas unidades onde acontece a transmição de dados. Portanto, um barramento de 8 linhas para transmitir dados 
+de 8 bits em paralelo.
+ Barramento de endereço: 
+
+Q2. Quais são as diferenças entre as memórias RAM e ROM?
+ 
+ RAM: É a memoria volatil do sistema, feita para armazenamento de dados rapidos e que serão apagados assim que se desliga o sistema.
+ ROM: É a memoria não volatil do sistema. Feita para armazenamento dos dados que deseja continuar a longo que o sistema fica desligado.	
+
+
+Q3. Considere o código abaixo, de 12 linhas:
+
+    1.   #include <stdio.h>
+    2.   int main(void)
+    3.   {
+    4.      int i;
+    5.      printf("Insira um número inteiro: ");
+    6.      scanf("%d", &i);
+    7.      if(i%2)
+    8.         printf("%d eh impar.\n");
+    9.      else
+   10.         printf("%d eh par.\n");
+   11.      return 0;
+   12.   }
+
+Para este código, responda:
+	(a) A variável 'i' é armazenada na memória RAM ou ROM? Por quê?
+             
+             É armazenda na RAm, pois esse sistema opera só quando está sendo compliado.
+		
+	(b) O programa compilado a partir deste código é armazenado na memória RAM ou ROM? Por quê?
+
+             É armazenado na ROM, pois poderá recompliar o codigo quando quiser. 
+
+Q4. Quais são as diferenças, vantagens e desvantagens das arquiteturas Harvard e Von Neumann?
+	
+	Harvard:  ROM fica separada da RAM, sendo assim criando um tempo maior para interpretação de algum dado que precisa vim da ROM passa pelo CPU, CPU para RAM e RAM para CPU. 
+	Von Neumann:  ROM e RAM ficam juntas, assim o tempo de interpretação é mais rapida. Não tem o Caminho ROM/ CPU, igual na Harvard;
+
+Q5. Considere a variável inteira 'i', armazenando o valor 0x8051ABCD. Se 'i' é armazenada na memória a partir do endereço 0x0200, como ficam este byte e os seguintes, considerando que a memória é:
+	(a) Little-endian?
+		Guarda os valores em função decrescente. Portanto, 
+			0X02002 -> 0XCD
+			0X02004 -> 0XAB
+			0X02006 -> 0X80
+			0X02008	-> 0X51 
+			
+	(b) Big-endian?
+		Guarda os valores em função crescente. Portanto,
+			0X02002 -> 0X51
+			0X02004 -> 0X80
+			0X02006 -> 0XAB
+			0X02008	-> 0XCD
+	
+
+
+Q6. Sabendo que o processador do MSP430 tem registradores de 16 bits, como ele soma duas variáveis de 32 bits?
+	
+	Ele faz a soma por partes. A Flag C vai para um.

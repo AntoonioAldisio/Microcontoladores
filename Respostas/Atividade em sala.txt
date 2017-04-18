@@ -1,0 +1,153 @@
+Multiplicar  e Dividir 
+************************************
+
+Em C
+--------------------
+
+unsigneg int Mult_unsigned( usigned int a, usigned int b)
+{
+	usigned int c = 0, i;
+	for (i = 1; i<= b; i++){
+		c =c+a;
+}
+
+Return C;		
+
+}
+
+Assembly
+-------------------------
+
+Mult_unsigned_2: clr R13 ; c =0
+		 mov.w #1, R12; i=1 
+For_mult2:	 cmp R12,R14
+		 jl Enf_for_mult2;  R14<R12 começa a instrução 
+		 add.w R15,R13
+		 inc.w R12
+		 jmp For_mult2
+End_for_mult2:   mov.w R13,R15
+		 ret	
+
+----------------------------------------
+Divisor
+
+---------------------------------------
+
+Em c 
+--------------------------------------
+unsigned int Div_unsigned(unsigned int a, unsigned int b){
+	unsigned int i;
+	for(i = 0;  a >= b; i++){
+a = a - b;
+
+Assembly
+-----------------------------------
+
+
+Div_unsigned:
+		clr R13;
+
+for_div: cmp R14,R15
+	jl End_for_div
+	sub.w R14,R15
+ 	inc.w R13
+	jmp for_div
+End_for_div: mov.w R13,R15
+	ret
+*************************************************
+Potencia 
+*************************************************
+
+Em C
+
+-------------------------------------------
+
+int_potencia(int x, int N){
+	int sign = 0, p =1;
+	if(N < 0){
+		N =-N;
+		sign = 1;
+	}
+	while(N > 0){
+		P = Mult_Signed(x,p);
+		N--;
+	}
+	if(sign == 1)
+		return Div_signed(1,p);
+	else
+return p;
+
+Assembly
+-----------------------------------------------
+
+	push R4
+	push R5
+Pot:    clr.w R4; sing =0 
+	mov.w #1, R15 ; p = 1
+	cmp #1, R14
+	jl while_pot
+	inv.w R14
+	inc.w R14
+	mov.w #1, R4
+while_pot: tst R14 ; cmp com 0
+	jz while_pot_end ; Oque é Jz ? 
+	push R15
+	push R14
+	mov.w R5,R114
+	call Mult_signed
+	mov.w R15,R5
+	pop R14
+	pop R15
+	dec R14
+	jmp while_pot
+	jl While_pot_end
+	push R15
+	push R14
+While_pot_end: cmp #1,R4
+	jne Pot_end 
+	mov.w #1, R15
+	mov.w R5,R14
+	call Div_signed
+	pop R5
+	pop R4
+	ret
+pot_end: mov.w R5,R15
+	pop R5
+	pop R4
+	ret
+
+**************************************
+Fibonacci 
+**************************************
+
+Em c 
+
+--------------------------------------
+
+void fibonacci(int A[], int N){
+	int i;
+	A[0] = 0;
+	A[1] = 1;
+	for(i = 2; i < N; i++){
+		A[i] = A[i-1] + A[i-2];
+	}
+}
+
+Assembly
+
+--------------------------------------
+
+	clr.w 0(R15)
+	mov.w #1, 2(R15)
+	mov.w #2, R13
+for_fibo: cmp R14,R13
+	jge For_fibo_end
+	mov.w R13,R12 ; R12 = A +2(i-2) => R12 = &A[i-2]
+	sub.w #2, R12
+	add.w R12,R12
+	add.w R15,R12
+	mov.w 0(R12), 4(R12) ;A[i] = A[i-2]
+	add.w 2(R12), 4(R12) ;A[i] += A=[i-2]
+	inc.w R13
+	jmp For_fibo
+For_fibo_end: ret

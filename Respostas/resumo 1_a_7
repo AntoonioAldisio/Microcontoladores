@@ -1,0 +1,71 @@
+Operações em assembly
+
+mov.w R5,R6 // Movendo o R5 para R6; .w = worldr
+add.w R5, R6 // soma R5+R6 é joga em R5
+
+MSP430 possui 16 registradores de 16 bits
+
+exemplo: 
+ f = (g+h) - (i+j)
+	 
+mov.w R5,R10
+add.w R6,R10
+mov.w R7,R11
+add.w R8,R11
+sub.w R11,R10
+mov.w R10, R4
+
+exemplo:
+ g = h+A[8];
+
+mov.w 16(R9), R5 // multiplico o valor por 2 que esta no vetor, pois tenho 2 bits em cada espaço do registrador
+add R6,R5
+
+Obs: No MSP430, o byte menos significativo fica na memória mais baixa;
+	 É little-Endian (Menor nos ultimos e maior no primeiro)
+		 
+Representando Instruções 
+
+Op-code -> 4 bits (símbolo para a instrução)
+S-reg -> 4 bits (número do registrador-fonte)
+Ad-> 1 bit ( indicador do modo de endereçamento do registrador-destino)
+b/w -> 1 bit ( indicador do tamanho de operação da instrução Word(0) ou byte(1)
+As -> 2 bits
+D-reg -> 4 bits (numero do registrador- destino)
+			  
+ Deslocamento de Bits p/ a esquerdar: << 
+ Deslocamento de Bits p/ a direita: >> 
+ And bit-a-bit: & -> forca bits a serem zerados.
+ xor bit a bit: ^ -> forca bits a serem invertidos
+ complemento bit a bit: ~
+ or: bit.w/b -> força bits a serem setados 
+ bic vs and ->  bic selecionar quais bits zerar no registrador
+ inv.b/w ->  inverti 
+ 
+ cmp R6,R8
+ N = 1 se R8<R6 (R8-R6<0)
+     0 caso contrário (R8>=R6)			  
+ 
+ Z = 1 se R8 = R6 (R8-R6 = 0)
+	 0 caso contrário (R8 diferentede R6)
+ 
+ c = 1 se houve carry no cálculo R8-R6, 0 caso contrário
+ 
+ V = 1 se house overflow no cálculo R8-R6, 0 caso contrário
+ 
+ jeq nome_da_função -> R6 = R8
+ 	Se R6 for diferente de R8, a próxima instrução é executado normalmente 
+
+ jne -> R6 diferente R8
+ 
+ jmp -> para a função
+ 
+ jge -> R4>=R7 
+ 
+ jge -> R4<=R7
+ 
+Use os registradores R15,R14,R13 e R12
+
+push -> armazena o valor na pilha  ( de cima para  baixo)
+
+pop -> pega o valor na pilha ( de baixo para cima)

@@ -1,0 +1,6 @@
+    Modo Ativo: Com todos os periféricos ativos;
+    Modo Low-Power 0 (LPM0): CPU (Central Processing Unit) desligada. ACLK (Auxiliary Clock) e SMCLK (Sub-Main Clock) permanecem ativos, MCLK (Main Clock) fica desativado;
+    Modo Low-Power 1 (LPM1): CPU (Central Processing Unit) desligada. ACLK (Auxiliary Clock) e SMCLK (Sub-Main Clock) permanecem ativos, MCLK (Main Clock) fica desativado. DCO (Digitally Controlled Oscillator) desativado;
+    Modo Low-Power 2 (LPM2): CPU (Central Processing Unit) desligada. MCLK (Main Clock) e SMCLK (Sub-Main Clock) desativados. DCO (Digitally Controlled Oscillator) permanece ativo. ACLK (Auxiliary Clock) Ativo;
+    Modo Low-Power 3 (LPM3): CPU (Central Processing Unit) desativado. MCLK (Main Clock) e SMCLK (Sub-Main Clock) desativados. DCO (Digitally Controlled Oscillator) desativado. ACLK (Auxiliary Clock) Ativo;
+    Modo Low-Power 4 (LPM4): CPU (Central Processing Unit) desativado. ACLK (Auxiliary Clock) desativado. MCLK (Main Clock) e SMCLK (Sub-Main Clock) desativados. DCO (Digitally Controlled Oscillator) desativado. Cristal Oscilador Desativado.

@@ -1,0 +1,97 @@
+
+
+Para todas as questões, utilize os LEDs e/ou os botões da placa Launchpad do MSP430.
+
+1. Escreva um código em C que pisca os LEDs ininterruptamente.
+
+#include "io430.h"
+#define LED1 BIT0
+#define LED2 BIT6
+#define LEDS (LED1|LED2)
+
+
+
+void main(void)
+{
+	WDTCTL = WDTPW | WDTHOLD;	// Stop WDT
+	
+        P1OUT = 0x00;
+        P1OUT |= LEDS;
+        P1DIR |= LEDS;
+        
+        for(;;){
+        
+          P1OUT  ^= LEDS ;
+        }
+        
+        
+        }
+
+2. Escreva um código em C que pisca os LEDs ininterruptamente. No ciclo que pisca os LEDs, o tempo que os LEDs ficam ligados deve ser duas vezes maior do que o tempo que eles ficam desligados
+
+
+
+3. Escreva um código em C que acende os LEDs quando o botão é pressionado.
+
+#include "io430.h"
+#define LED1 BIT0
+#define BTN BIT3
+
+
+void main(void)
+{
+	WDTCTL = WDTPW | WDTHOLD;	// Stop WDT
+	
+        P1OUT = 0x00;
+        P1OUT |= LED1;
+        P1DIR = LED1;
+        P1DIR &= ~BTN;
+        P1REN |= BTN;
+        P1OUT |= BTN;
+        
+        for(;;){
+          if((P1IN & BTN)== 0){
+          P1OUT  &= ~LED1;
+        }else {
+          P1OUT |= LED1;
+        }
+     }
+ }
+
+
+4. Escreva um código em C que pisca os LEDs ininterruptamente somente se o botão for pressionado.
+
+#include "io430.h"
+#define LED1 BIT0
+#define BTN BIT3
+
+
+void main(void)
+{
+	WDTCTL = WDTPW | WDTHOLD;	// Stop WDT
+	
+        P1OUT = 0x00;
+        P1OUT |= LED1;
+        P1DIR = LED1;
+        P1DIR &= ~BTN;
+        P1REN |= BTN;
+        P1OUT |= BTN;
+        
+        for(;;){
+          if((P1IN & BTN)== 0){
+          P1OUT  &= ~LED1;
+        }else {
+          P1OUT |= LED1;
+        }
+     }
+ }
+
+
+5. Escreva um código em C que acende os LEDs quando o botão é pressionado. Deixe o MSP430 em modo de baixo consumo, e habilite a interrupção do botão.
+
+
+
+
+
+
+
